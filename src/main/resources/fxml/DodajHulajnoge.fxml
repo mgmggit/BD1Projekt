@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.wypozyczalnia.java.fx.controller.DodajHulajnogeController">
+    <children>
+        <Label layoutX="222.0" layoutY="37.0" text="Dodawanie hulajnogi">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="51.0" layoutY="94.0" text="Klasa: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="328.0" layoutY="94.0" text="Rok nabycia: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField id="hulajnogaKlasa" fx:id="hulajnogaKlasa" layoutX="51.0" layoutY="127.0" onAction="#dodajHulajnoge" />
+        <TextField id="hulajnogaRokNabycia" fx:id="hulajnogaRokNabycia" layoutX="333.0" layoutY="127.0" onAction="#dodajHulajnoge" />
+        <Button layoutX="348.0" layoutY="327.0" mnemonicParsing="false" onAction="#dodajHulajnoge" text="Dodaj" />
+        <Button layoutX="204.0" layoutY="327.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+    </children>
+</Pane>

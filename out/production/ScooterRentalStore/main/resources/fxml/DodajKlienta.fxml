@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.wypozyczalnia.java.fx.controller.DodajKlientaController">
+    <children>
+        <Label layoutX="256.0" layoutY="39.0" text="Dodaj klienta">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="66.0" layoutY="106.0" text="Imię: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="66.0" layoutY="190.0" text="Nazwisko: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="343.0" layoutY="106.0" text="Pesel: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField id="imieKlienta" fx:id="imieKlienta" layoutX="66.0" layoutY="138.0" onAction="#dodajKlienta" />
+        <TextField id="nazwiskoKlienta" fx:id="nazwiskoKlienta" layoutX="66.0" layoutY="226.0" onAction="#dodajKlienta" />
+        <TextField id="peselKlienta" fx:id="peselKlienta" layoutX="344.0" layoutY="138.0" onAction="#dodajKlienta" />
+        <Button layoutX="353.0" layoutY="338.0" mnemonicParsing="false" onAction="#dodajKlienta" text="Dodaj" />
+        <Button layoutX="202.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+    </children>
+</Pane>
