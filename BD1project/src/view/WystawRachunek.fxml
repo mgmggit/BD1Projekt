@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WystawRachunekController">
+   <children>
+      <Label layoutX="255.0" layoutY="41.0" text="Rachunek">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="122.0" text="Id wypożyczenia:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="wypozyczenieId" id="wypozyczenieId" layoutX="242.0" layoutY="119.0" />
+      <Button layoutX="179.0" layoutY="320.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+      <Button layoutX="397.0" layoutY="320.0" mnemonicParsing="false" onAction="#wystawRachunek" text="Oblicz" />
+      <Label layoutX="68.0" layoutY="200.0" text="Koszt wypożyczenia:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="koszt" id="koszt" editable="false" layoutX="242.0" layoutY="197.0" prefHeight="16.0" prefWidth="170.0" />
+   </children>
+</Pane>

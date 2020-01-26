@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DodajWypozyczenieController">
+    <children>
+        <Label layoutX="233.0" layoutY="39.0" text="Dodaj wypożyczenie">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="34.0" layoutY="102.0" text="Id klienta: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="138.0" text="Nr rejestracyjny wypożyczanej hulajnogi: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="170.0" text="Godzina rozpoczecia wypozyczenia: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="204.0" text="Godzina zakonczenia wypozyczenia: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="33.0" layoutY="241.0" text="Nr dodatkowej uslugi (1 lub 2): ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField id="idWypozyczenia" fx:id="idWypozyczeniaText" layoutX="397.0" layoutY="274.0" onAction="#dodajWypozyczenie" />
+        <TextField id="idKlienta" fx:id="idKlientaText" layoutX="397.0" layoutY="99.0" onAction="#dodajWypozyczenie" />
+        <TextField id="godzinaOd" fx:id="godzinaOdText" layoutX="397.0" layoutY="166.0" onAction="#dodajWypozyczenie" />
+        <TextField id="godzinaDo" fx:id="godzinaDoText" layoutX="397.0" layoutY="200.0" onAction="#dodajWypozyczenie" />
+        <TextField id="nrUslugi" fx:id="nrUslugiText" layoutX="397.0" layoutY="237.0" onAction="#dodajWypozyczenie" />
+        <TextField id="nrRejestr" fx:id="nrRejestrText" layoutX="397.0" layoutY="134.0" onAction="#dodajWypozyczenie" />
+        <Button layoutX="353.0" layoutY="338.0" mnemonicParsing="false" onAction="#dodajWypozyczenie" text="Dodaj" />
+        <Button layoutX="202.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+      <Label layoutX="33.0" layoutY="278.0" text="Id wypożyczenia:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+    </children>
+</Pane>

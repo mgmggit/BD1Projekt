@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+    <children>
+        <Label id="hulajnogiText" alignment="CENTER" layoutX="68.0" layoutY="30.0" text="Hulajnogi">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+        <Label id="klienciText" alignment="CENTER" layoutX="287.0" layoutY="32.0" text="Klienci">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+        <Label id="wypozyczeniaText" alignment="CENTER" layoutX="474.0" layoutY="32.0" text="Wypożyczenia">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+        <Button fx:id="dodajHulajnoge" layoutX="37.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" text="Dodaj hulajnoge" />
+        <Button fx:id="wyswietlHulajnogi" layoutX="40.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" text="Pokaż hulajnogi" />
+        <Button fx:id="dodajKlienta" layoutX="256.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" text="Dodaj klienta" />
+        <Button fx:id="dodajWypozyczenie" layoutX="436.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" text="Zarejestruj wypożyczenie" />
+        <Button fx:id="wyswietlKlientow" layoutX="251.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" text="Pokaż klientów" />
+        <Button fx:id="wyswietlWypozyczenia" layoutX="455.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" text="Pokaż wypożyczenia" />
+        <Button fx:id="usunHulajnoge" layoutX="40.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" text="Usuń hulajnoge" />
+        <Button fx:id="usunKlienta" layoutX="259.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" text="Usuń klienta" />
+        <Button fx:id="usunWypozyczenie" layoutX="458.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" text="Usuń wypożyczenie" />
+        <Button fx:id="wystawRachunek" layoutX="68.0" layoutY="258.0" mnemonicParsing="false" onAction="#dodaj" text="Wystaw" />
+        <Button fx:id="exitButton" layoutX="521.0" layoutY="349.0" mnemonicParsing="false" onAction="#exit" text="Zamknij" />
+      <Label layoutX="66.0" layoutY="228.0" text="Rachunek">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+       </children>
+</Pane>

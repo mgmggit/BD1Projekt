@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WyswietlHulajnogiController">
+    <children>
+        <Button layoutX="90.0" layoutY="348.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+        <TableView id="hulajnogiTable" fx:id="hulajnogiTable" layoutX="239.0" layoutY="26.0" prefHeight="348.0" prefWidth="305.0">
+            <columns>
+            <TableColumn id="hulajnogaId"  fx:id="hulajnogaIdColumn" prefWidth="60.0" text="id" />
+                <TableColumn id="klasa" fx:id="klasaColumn" prefWidth="122.0" text="Klasa" />
+                <TableColumn id="rokNabycia" fx:id="rokNabyciaColumn" prefWidth="122.0" text="Rok nabycia" />
+            </columns>
+        </TableView>
+        <Button layoutX="64.0" layoutY="187.0" mnemonicParsing="false" onAction="#pobierzDane" text="Pobierz dane" />
+        <Label layoutX="63.0" layoutY="48.0" text="Lista hulajnog">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

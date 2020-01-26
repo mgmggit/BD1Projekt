@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WyswietlWypozyczeniaController">
+    <children>
+        <TableView id="wypozyczeniaTable" fx:id="wypozyczeniaTable" layoutX="8.0" layoutY="72.0" prefHeight="256.0" prefWidth="584.0">
+            <columns>
+                <TableColumn id="wypozyczenieId" fx:id="wypozyczenieIdColumn" prefWidth="35.0" text="id" />
+                <TableColumn id="klientId" fx:id="klientIdColumn" prefWidth="68.0" text="KlientID" />
+                <TableColumn id="nrRejestr" fx:id="nrRejestrColumn" prefWidth="96.0" text="Rejestracja" />
+                <TableColumn id="godzinaOd" fx:id="godzinaOdColumn" prefWidth="186.0" text="Godzina wypożyczenia" />
+                <TableColumn id="godzinaDo" fx:id="godzinaDoColumn" prefWidth="127.0" text="Godzina zwrotu" />
+                <TableColumn id="nrUslugi" fx:id="nrUslugiColumn" prefWidth="71.0" text="Usługa" />
+            </columns>
+        </TableView>
+        <Button layoutX="27.0" layoutY="353.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+        <Button layoutX="27.0" layoutY="26.0" mnemonicParsing="false" onAction="#pobierzDane" text="Pobierz dane" />
+        <Label layoutX="255.0" layoutY="29.0" text="Lista wypożyczeń">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+    </children>
+</Pane>

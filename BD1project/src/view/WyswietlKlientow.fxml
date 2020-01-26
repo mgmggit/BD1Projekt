@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.WyswietlKlientowController">
+    <children>
+        <Label layoutX="35.0" layoutY="49.0" prefHeight="19.0" prefWidth="111.0" text="Lista klientów">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TableView fx:id="klientTable" layoutX="175.0" layoutY="40.0" prefHeight="315.0" prefWidth="397.0">
+            <columns>
+                <TableColumn id="klientId" fx:id="klientIdColumn" prefWidth="53.0" text="id" />
+                <TableColumn id="imie" fx:id="imieColumn" prefWidth="104.0" text="Imię" />
+                <TableColumn id="nazwisko" fx:id="nazwiskoColumn" minWidth="0.0" prefWidth="116.0" text="Nazwisko" />
+                <TableColumn id="pesel" fx:id="peselColumn" prefWidth="123.0" text="PESEL" />
+            </columns>
+        </TableView>
+        <Button layoutX="65.0" layoutY="342.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+        <Button layoutX="40.0" layoutY="187.0" mnemonicParsing="false" onAction="#pobierzDane" text="Pobierz dane" />
+    </children>
+</Pane>
