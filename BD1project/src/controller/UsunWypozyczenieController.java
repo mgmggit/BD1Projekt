@@ -44,7 +44,7 @@ public class UsunWypozyczenieController implements Initializable, ControlledScre
     private void potwierdzajacyDialog(String id) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy na pewno chcesz usunac wypozyczenie o id =" + id + " ?");
+        alert.setContentText("Czy na pewno chcesz usunac to wypozyczenie?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
             System.out.println("Wypozyczenie usuniete!");

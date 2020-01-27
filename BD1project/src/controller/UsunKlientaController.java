@@ -43,7 +43,7 @@ public class UsunKlientaController implements Initializable, ControlledScreen {
     private void potwierdzajacyDialog(String id) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy na pewno chcesz usunac klienta o id  = " + id + "?");
+        alert.setContentText("Czy na pewno chcesz usunac klienta o id = " + id + " ?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
             System.out.println("Klient usuniety!");

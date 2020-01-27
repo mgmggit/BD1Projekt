@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 
-public class WystawRachunekController extends UsunWypozyczenieController implements Initializable, ControlledScreen {
+public class WystawRachunekController implements Initializable, ControlledScreen {
 
     ScreensController wrController;
 
@@ -33,32 +33,25 @@ public class WystawRachunekController extends UsunWypozyczenieController impleme
     }
 
     @FXML
-    public void wystawRachunek(ActionEvent event) throws NullPointerException {
-        String id;
-        if(wypozyczenieId.getText() == null || wypozyczenieId.getText().trim().isEmpty()){
-            System.out.println("Nalezy wprowadzic id!");
-            id = wypozyczenieId.getText();
-            if (czyNumer(id, "Id wypozyczenia")) {
+    public void wystawRachunek(ActionEvent event) {
+        String id = wypozyczenieId.getText();
+            if (czyNumer(id, "Id wypozyczenia") && WypozyczalniaHulajnog.sprWypozyczenie(id)) {
                 potwierdzajacyDialog(Integer.parseInt(id));
+            } else {
+                warningAlert("Nie ma wypozyczenie o takim id!");
             }
-        } else {
-            id = wypozyczenieId.getText();
-            if (czyNumer(id, "Id wypozyczenia")) {
-                potwierdzajacyDialog(Integer.parseInt(id));
-            }
-        }
     }
+
 
     private void potwierdzajacyDialog(int id) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy na pewno chcesz sfinalizować wypozyczenie o id = " + id + " ?");
+        alert.setContentText("Czy na pewno chcesz sfinalizować wypozyczenie?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
             System.out.println("Rachunek wydany!");
             int a = WypozyczalniaHulajnog.wystawRachunek(id);
             koszt.setText(String.valueOf(a));
-            goToMenu();
         }
     }
 

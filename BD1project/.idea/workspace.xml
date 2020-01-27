@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="clean up wystawiania rachunku">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/01296b6d-9341-43b5-ae9b-f5bb6ae0ca0e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/01296b6d-9341-43b5-ae9b-f5bb6ae0ca0e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BD1project/controller/WystawRachunekController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BD1project/controller/WystawRachunekController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BD1project/model/WypozyczalniaHulajnog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BD1project/model/WypozyczalniaHulajnog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UsunHulajnogeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UsunHulajnogeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UsunKlientaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UsunKlientaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UsunWypozyczenieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UsunWypozyczenieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/WystawRachunekController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/WystawRachunekController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/WypozyczalniaHulajnog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/WypozyczalniaHulajnog.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,8 +89,13 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1WkrPRpJWEkzM4bRQ8GEUHdqLrC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -97,6 +113,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -237,6 +254,7 @@
       <workItem from="1579949170641" duration="34593000" />
       <workItem from="1580026167759" duration="1055000" />
       <workItem from="1580035416028" duration="32656000" />
+      <workItem from="1580081223850" duration="2617000" />
     </task>
     <servers />
   </component>
@@ -246,6 +264,8 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <MESSAGE value="clean up wystawiania rachunku" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up wystawiania rachunku" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579727233800">
@@ -272,26 +292,30 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1207" y="423" width="488" height="258" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/67.27.1853.1053@67.27.1853.1053" timestamp="1579993174002" />
+    <state x="535" y="149" width="907" height="807" key="CommitChangelistDialog2" timestamp="1580082529010">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="535" y="149" width="907" height="807" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1580082529010" />
     <state x="1185" y="285" width="735" height="484" key="FileChooserDialogImpl" timestamp="1580044435024">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1185" y="285" width="735" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1580044435024" />
-    <state width="881" height="267" key="GridCell.Tab.0.bottom" timestamp="1580076367811">
+    <state width="1807" height="267" key="GridCell.Tab.0.bottom" timestamp="1580084275054">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="267" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580076367811" />
-    <state width="881" height="267" key="GridCell.Tab.0.center" timestamp="1580076367810">
+    <state width="1807" height="267" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1580084275054" />
+    <state width="1807" height="267" key="GridCell.Tab.0.center" timestamp="1580084275053">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="267" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580076367810" />
-    <state width="881" height="267" key="GridCell.Tab.0.left" timestamp="1580076367809">
+    <state width="1807" height="267" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1580084275053" />
+    <state width="1807" height="267" key="GridCell.Tab.0.left" timestamp="1580084275053">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="267" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580076367809" />
-    <state width="881" height="267" key="GridCell.Tab.0.right" timestamp="1580076367810">
+    <state width="1807" height="267" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1580084275053" />
+    <state width="1807" height="267" key="GridCell.Tab.0.right" timestamp="1580084275053">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="881" height="267" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580076367810" />
+    <state width="1807" height="267" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1580084275053" />
     <state width="881" height="344" key="GridCell.Tab.1.bottom" timestamp="1579993960215">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -320,6 +344,10 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1289" y="104" width="432" height="635" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1579786523402" />
+    <state x="761" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580082442544">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="761" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1580082442544" />
     <state x="656" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1580057755766">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

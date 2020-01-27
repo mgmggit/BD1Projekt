@@ -279,6 +279,25 @@ public class WypozyczalniaHulajnog {
         }
     }
 
+    //Sprawdzanie czy wypozyczenie istnieje w BD
+    public static boolean sprWypozyczenie(String num) {
+        try {Connection conn = connect();
+            PreparedStatement pstmt = conn.prepareStatement("SELECT wypozyczenie_id FROM wypozyczenia WHERE (wypozyczenie_id='" + num + "')");
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                pstmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas szukania wypozyczenia w BD!");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
 
     public static int wystawRachunek(int wypozyczenieID) {
         String SQL = "SELECT * FROM  oblicz(?)";
