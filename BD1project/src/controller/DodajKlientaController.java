@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -49,7 +50,7 @@ public class DodajKlientaController implements Initializable, ControlledScreen {
     private void potwierdzajacyDialog(int id, String imie, String nazwisko, String pesel) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy te dane sa prawidlowe?\nImie: " + imie + "\nNazwisko: " + nazwisko + "\nPesel: " + pesel);
+        alert.setContentText("Czy te dane sa prawidłowe?\nImie: " + imie + "\nNazwisko: " + nazwisko + "\nPesel: " + pesel);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
             System.out.println("Klient dodany!");
@@ -63,7 +64,7 @@ public class DodajKlientaController implements Initializable, ControlledScreen {
     //Spr czy nazwisko jest wprowadzone
     public boolean sprText(String text, String label) {
         if ((text.equals("")) || (!czyText(text))) {
-            String alert = "Pole " + label + " nie moze byæ puste i musi skladac sie jedynie z liter!";
+            String alert = "Pole " + label + " nie moze być puste i musi skladać sie jedynie z liter!";
             warningAlert(alert);
             return false;
         } else {
@@ -74,7 +75,7 @@ public class DodajKlientaController implements Initializable, ControlledScreen {
     //Spr czy pesel jest dobrze wprowadzony
     public boolean sprPesel(String pesel) {
         if ((!czyNumer(pesel)) || (pesel.length() != 11)) {
-            String alert = "Podany zly numer PESEL!";
+            String alert = "Podany zły numer PESEL!";
             warningAlert(alert);
             return false;
         } else {
@@ -115,4 +116,5 @@ public class DodajKlientaController implements Initializable, ControlledScreen {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
+
 }

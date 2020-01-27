@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static String screen0ID = "Logowanie";
+    public static String screen0File = "/view/Logowanie.fxml";
     public static String screen1ID = "Menu";
     public static String screen1File = "/view/MenuScreen.fxml";
     public static String screen2ID = "Dodawanie Hulajnogi";
@@ -29,11 +31,16 @@ public class Main extends Application {
     public static String screen10File = "/view/UsunWypozyczenie.fxml";
     public static String screen11ID = "Wystawianie Rachunku";
     public static String screen11File = "/view/WystawRachunek.fxml";
+    public static String screen12ID = "Dodawanie Uzytkownika";
+    public static String screen12File = "/view/DodajUzytkownika.fxml";
+    public static String screen13ID = "Usuwanie Uzytkownika";
+    public static String screen13File = "/view/UsunUzytkownika.fxml";
 
     @Override
     public void start(Stage primaryStage) {
 
         ScreensController mainContainer = new ScreensController();
+        mainContainer.zaladujScreen(Main.screen0ID, Main.screen0File);
         mainContainer.zaladujScreen(Main.screen1ID, Main.screen1File);
         mainContainer.zaladujScreen(Main.screen2ID, Main.screen2File);
         mainContainer.zaladujScreen(Main.screen3ID, Main.screen3File);
@@ -45,8 +52,11 @@ public class Main extends Application {
         mainContainer.zaladujScreen(Main.screen9ID, Main.screen9File);
         mainContainer.zaladujScreen(Main.screen10ID, Main.screen10File);
         mainContainer.zaladujScreen(Main.screen11ID, Main.screen11File);
+        mainContainer.zaladujScreen(Main.screen12ID, Main.screen12File);
+        mainContainer.zaladujScreen(Main.screen13ID, Main.screen13File);
 
-        mainContainer.ustawScreen(Main.screen1ID);
+
+        mainContainer.ustawScreen(Main.screen0ID);
 
         Group root = new Group();
         root.getChildren().addAll(mainContainer);

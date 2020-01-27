@@ -81,8 +81,4 @@ public class ListaWypozyczen {
         this.nrUslugi = new SimpleIntegerProperty(nrUslugi);
     }
 
-//    public ListaWypozyczen(int klientId, String nrRejestr) {
-//        this.klientId = new SimpleIntegerProperty(klientId);
-//        this.nrRejestr = new SimpleStringProperty(nrRejestr);
-//    }
 }

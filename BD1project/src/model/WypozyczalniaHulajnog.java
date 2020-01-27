@@ -314,5 +314,71 @@ public class WypozyczalniaHulajnog {
         System.out.println("Suma kosztów za wypożyczenie pod nr " + wypozyczenieID + " wynosi " + sum + " zł.");
         return sum;
     }
+
+    public void dodajUzytkownika(ListaUzytkownikow uzytkownik) {
+        String SQL = "INSERT INTO logowanie(uzytkownik_id, login, haslo) VALUES (?, ?, ?);";
+        try {Connection conn = connect();
+            prepStmt = conn.prepareStatement(SQL);
+            prepStmt.setInt(1, uzytkownik.getUzytkownikId());
+            prepStmt.setString(2, uzytkownik.getLogin());
+            prepStmt.setString(3, uzytkownik.getHaslo());
+
+            prepStmt.execute();
+        } catch (SQLException e) {
+            System.out.println("Problem z dodaniem użytkownika do BD");
+            e.printStackTrace();
+        }
+    }
+
+    public static void usunUzytkownika(String login) {
+        String SQL = "DELETE FROM logowanie WHERE login = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+            pstmt.setString(1, login);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Problem z usunieciem użytkownika z BD");
+            e.printStackTrace();
+        }
+    }
+
+    public static boolean sprUzytkownik(String login, String haslo) {
+        String SQL = "SELECT login, haslo FROM logowanie WHERE login = ? AND haslo = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)){
+            pstmt.setString(1, login);
+            pstmt.setString(2, haslo);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                pstmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas sprawdzania danych użytkownika w BD");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean sprLogin(String login) {
+        String SQL = "SELECT login, haslo FROM logowanie WHERE login = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)){
+            pstmt.setString(1, login);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                pstmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas sprawdzania loginu użytkownika w BD");
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 

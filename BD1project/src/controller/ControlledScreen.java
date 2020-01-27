@@ -2,6 +2,7 @@ package controller;
 
 public interface ControlledScreen {
 
+    String screen0ID = "Logowanie";
     String screen1ID = "Menu";
     String screen2ID = "Dodawanie Hulajnogi";
     String screen3ID = "Dodawanie Klienta";
@@ -13,6 +14,9 @@ public interface ControlledScreen {
     String screen9ID = "Usuwanie Klientow";
     String screen10ID = "Usuwanie Wypozyczen";
     String screen11ID = "Wystawianie Rachunku";
+    String screen12ID = "Dodawanie Uzytkownika";
+    String screen13ID = "Usuwanie Uzytkownika";
+
 
     void setScreenParent(ScreensController screenPage);
 }

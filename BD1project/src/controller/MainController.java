@@ -50,6 +50,9 @@ public class MainController implements  Initializable, ControlledScreen {
             case "wystawRachunek":
                 mainController.ustawScreen(screen11ID);
                 break;
+            case "backLog":
+                mainController.ustawScreen(screen0ID);
+                break;
             default:
                 System.out.println("Nie ma takiego przycisku");
                 break;
