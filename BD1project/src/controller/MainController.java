@@ -50,6 +50,15 @@ public class MainController implements  Initializable, ControlledScreen {
             case "wystawRachunek":
                 mainController.ustawScreen(screen11ID);
                 break;
+            case "dodajEgzemplarz":
+                mainController.ustawScreen(screen14ID);
+                break;
+            case "wyswietlEgzemplarze":
+                mainController.ustawScreen(screen15ID);
+                break;
+            case "usunEgzemplarz":
+                mainController.ustawScreen(screen16ID);
+                break;
             case "backLog":
                 mainController.ustawScreen(screen0ID);
                 break;

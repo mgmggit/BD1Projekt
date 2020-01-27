@@ -6,7 +6,7 @@
 
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DodajKlientaController">
     <children>
-        <Label layoutX="256.0" layoutY="39.0" text="Dodaj klienta">
+        <Label layoutX="244.0" layoutY="40.0" text="Dodaj klienta">
             <font>
                 <Font size="15.0" />
             </font>
@@ -31,7 +31,7 @@
         <TextField id="nazwiskoKlienta" fx:id="nazwiskoKlienta" layoutX="66.0" layoutY="226.0" onAction="#dodajKlienta" />
         <TextField id="peselKlienta" fx:id="peselKlienta" layoutX="344.0" layoutY="138.0" onAction="#dodajKlienta" />
         <Button fx:id="dodajKlienta" layoutX="353.0" layoutY="338.0" mnemonicParsing="false" onAction="#dodajKlienta" text="Dodaj" />
-        <Button fx:id="backButton" layoutX="202.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+        <Button fx:id="backButton" layoutX="184.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
       <Label layoutX="344.0" layoutY="190.0" text="Id:">
          <font>
             <Font size="15.0" />

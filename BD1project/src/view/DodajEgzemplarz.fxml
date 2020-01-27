@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DodajEgzemplarzController">
+    <children>
+        <Label layoutX="207.0" layoutY="37.0" text="Dodawanie egzemplarza">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="83.0" layoutY="122.0" text="Nr rejestracyjny: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="343.0" layoutY="122.0" text="Id hulajnogi: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField id="hulajnogaId" fx:id="hulajnogaId" layoutX="343.0" layoutY="153.0" onAction="#dodajEgzemplarz" />
+        <TextField id="nr" fx:id="nr" layoutX="83.0" layoutY="153.0" onAction="#dodajEgzemplarz" />
+        <Button fx:id="dodajEgzemplarz" layoutX="343.0" layoutY="338.0" mnemonicParsing="false" onAction="#dodajEgzemplarz" text="Dodaj" />
+        <Button fx:id="backButton" layoutX="201.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+    </children>
+</Pane>

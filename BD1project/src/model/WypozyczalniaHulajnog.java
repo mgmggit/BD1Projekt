@@ -186,33 +186,85 @@ public class WypozyczalniaHulajnog {
                 return true;
             }
         } catch (SQLException e) {
-            System.out.println("Problem podczas szukania danych hulajnogi w BD!");
+            System.out.println("Problem podczas szukania hulajnogi o danej rejestracji w BD!");
             e.printStackTrace();
         }
         return false;
     }
 
+    //Sprawdzanie czy hulajnoga istnieje w BD
+    public boolean sprHulajnogaId(int id) {
+        try {Connection conn = connect();
+            prepStmt = conn.prepareStatement("SELECT hulajnoga_id FROM hulajnogi WHERE (hulajnoga_id='" + id + "')");
+            rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                prepStmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas szukania hulajnogi o danym id w BD!");
+            e.printStackTrace();
+        }
+        return false;
+    }
 
+    public void dodajEgzemplarz(Egzemplarze egz) {
+        String SQL = "INSERT INTO egzemplarze(nr_rejestr, hulajnoga_id) VALUES (?, ?);";
+        try {Connection conn = connect();
+            prepStmt = conn.prepareStatement(SQL);
+            prepStmt.setString(1, egz.getNr());
+            prepStmt.setInt(2, egz.getHulajnogaId());;
+            prepStmt.execute();
+        } catch (SQLException e) {
+            System.out.println("Problem z dodaniem egzemplarza do BD");
+            e.printStackTrace();
+        }
+    }
 
-//    public String hulajnogaInfo(String num) {
-//        String nrRejestr;
-//        int hulajnogaId;
-//        try {Connection conn = connect();
-//            prepStmt = conn.prepareStatement("SELECT nr_rejestr, hulajnoga_id FROM egzemplarze WHERE nr_rejestr='" + num + "'");
-//            rs = prepStmt.executeQuery();
-//            while (rs.next()) {
-//                System.out.println("Znaleziono w bazie!");
-//                nrRejestr = rs.getString("nrRejestr");
-//                hulajnogaId = rs.getInt("hulajnogaId");
-//                prepStmt.close();
-//                return nrRejestr + " " + hulajnogaId;
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Problem podczas szukania danych egzemplarza w BD!");
-//            e.printStackTrace();
-//        }
-//        return "";
-//    }
+    public static void usunEgzemplarz(String nr) {
+        String SQL = "DELETE FROM egzemplarze WHERE nr_rejestr = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+            pstmt.setString(1, nr);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Problem z usunięciem egzemplarza z BD");
+            e.printStackTrace();
+        }
+    }
+
+    public static ObservableList<Egzemplarze> wyswietlEgzemplarze() throws SQLException {
+        String SQL = "SELECT * FROM egzemplarze;";
+        try {Connection conn = connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            ObservableList<Egzemplarze> egzList = getEgzemplarzObjects(rs);
+            return egzList;
+        } catch (SQLException e) {
+            System.out.println("Problem z dostaniem danych egzemplarzy z BD" + e);
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    private static ObservableList<Egzemplarze> getEgzemplarzObjects(ResultSet rs) throws SQLException {
+        try {
+            ObservableList<Egzemplarze> egzList = FXCollections.observableArrayList();
+            while (rs.next()){
+                Egzemplarze egz = new Egzemplarze();
+                egz.setNr(rs.getString("nr_rejestr"));
+                egz.setHulajnogaId(rs.getInt("hulajnoga_id"));
+                egzList.add(egz);
+            }
+            return egzList;
+        } catch (SQLException e) {
+            System.out.println("Error"+e);
+            e.printStackTrace();
+            throw e;
+        }
+    }
 
 
     public void dodajWypozyczenie(ListaWypozyczen wypozyczenie) {
@@ -221,7 +273,7 @@ public class WypozyczalniaHulajnog {
             prepStmt = conn.prepareStatement(SQL);
             prepStmt.setInt(1, wypozyczenie.getWypozyczenieId());
             prepStmt.setInt(2, wypozyczenie.getKlientId());
-            prepStmt.setString(4, wypozyczenie.getNrRejestr());
+            prepStmt.setString(3, wypozyczenie.getNrRejestr());
             prepStmt.setInt(4, wypozyczenie.getGodzinaOd());
             prepStmt.setInt(5, wypozyczenie.getGodzinaDo());
             prepStmt.setInt(6, wypozyczenie.getNrUslugi());

@@ -14,26 +14,35 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-        <Label id="wypozyczeniaText" alignment="CENTER" layoutX="474.0" layoutY="32.0" text="Wypożyczenia">
+        <Label id="wypozyczeniaText" alignment="CENTER" layoutX="467.0" layoutY="32.0" text="Wypożyczenia">
          <font>
             <Font size="15.0" />
          </font></Label>
-        <Button fx:id="dodajHulajnoge" layoutX="37.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" text="Dodaj hulajnoge" />
-        <Button fx:id="wyswietlHulajnogi" layoutX="36.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="124.0" text="Pokaż hulajnogi" />
-        <Button fx:id="dodajKlienta" layoutX="251.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Dodaj klienta" />
-        <Button fx:id="dodajWypozyczenie" layoutX="436.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="184.0" text="Zarejestruj wypożyczenie" textAlignment="CENTER" />
-        <Button fx:id="wyswietlKlientow" layoutX="251.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" text="Pokaż klientów" />
-        <Button fx:id="wyswietlWypozyczenia" layoutX="436.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="184.0" text="Pokaż wypożyczenia" textAlignment="CENTER" />
-        <Button fx:id="usunHulajnoge" layoutX="36.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="124.0" text="Usuń hulajnoge" />
-        <Button fx:id="usunKlienta" layoutX="251.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Usuń klienta" />
-        <Button fx:id="usunWypozyczenie" layoutX="438.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="184.0" text="Usuń wypożyczenie" />
-        <Button fx:id="wystawRachunek" layoutX="68.0" layoutY="258.0" mnemonicParsing="false" onAction="#dodaj" text="Wystaw" />
+        <Button fx:id="dodajHulajnoge" layoutX="46.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Dodaj" />
+        <Button fx:id="wyswietlHulajnogi" layoutX="46.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Wyświetl" />
+        <Button fx:id="dodajKlienta" layoutX="251.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Dodaj" />
+        <Button fx:id="dodajWypozyczenie" layoutX="463.0" layoutY="61.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Dodaj" textAlignment="CENTER" />
+        <Button fx:id="wyswietlKlientow" layoutX="251.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Wyświetl" />
+        <Button fx:id="wyswietlWypozyczenia" layoutX="463.0" layoutY="97.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Wyświetl" textAlignment="CENTER" />
+        <Button fx:id="usunHulajnoge" layoutX="46.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Usuń" />
+        <Button fx:id="usunKlienta" layoutX="251.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Usuń" />
+        <Button fx:id="usunWypozyczenie" layoutX="463.0" layoutY="136.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Usuń" />
+        <Button fx:id="dodajEgzemplarz" layoutX="46.0" layoutY="245.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Dodaj" />
+        <Button fx:id="wyswietlEgzemplarze" layoutX="46.0" layoutY="284.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Wyświetl" />
+        <Button fx:id="usunEgzemplarz" layoutX="46.0" layoutY="323.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Usuń" />
+        <Button fx:id="wystawRachunek" layoutX="463.0" layoutY="245.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Wystaw" />
         <Button fx:id="backLog" layoutX="431.0" layoutY="349.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="74.0" text="Wróć" />
         <Button fx:id="exitButton" layoutX="521.0" layoutY="349.0" mnemonicParsing="false" onAction="#exit" text="Zamknij" />
-      <Label layoutX="66.0" layoutY="228.0" text="Rachunek">
+      <Label layoutX="484.0" layoutY="216.0" text="Rachunek">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
+      <Label layoutX="55.0" layoutY="216.0" text="Egzemplarze">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+
        </children>
 </Pane>

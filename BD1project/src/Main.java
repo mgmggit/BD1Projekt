@@ -35,6 +35,12 @@ public class Main extends Application {
     public static String screen12File = "/view/DodajUzytkownika.fxml";
     public static String screen13ID = "Usuwanie Uzytkownika";
     public static String screen13File = "/view/UsunUzytkownika.fxml";
+    public static String screen14ID = "Dodawanie Egzemplarza";
+    public static String screen14File = "/view/DodajEgzemplarz.fxml";
+    public static String screen15ID = "Wyswietlanie Egzemplarzy";
+    public static String screen15File = "/view/WyswietlEgzemplarze.fxml";
+    public static String screen16ID = "Usuwanie Egzemplarza";
+    public static String screen16File = "/view/UsunEgzemplarz.fxml";
 
     @Override
     public void start(Stage primaryStage) {
@@ -54,6 +60,9 @@ public class Main extends Application {
         mainContainer.zaladujScreen(Main.screen11ID, Main.screen11File);
         mainContainer.zaladujScreen(Main.screen12ID, Main.screen12File);
         mainContainer.zaladujScreen(Main.screen13ID, Main.screen13File);
+        mainContainer.zaladujScreen(Main.screen14ID, Main.screen14File);
+        mainContainer.zaladujScreen(Main.screen15ID, Main.screen15File);
+        mainContainer.zaladujScreen(Main.screen16ID, Main.screen16File);
 
 
         mainContainer.ustawScreen(Main.screen0ID);

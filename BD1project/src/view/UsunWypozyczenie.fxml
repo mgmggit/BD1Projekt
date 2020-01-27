@@ -6,7 +6,7 @@
 
 <Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsunWypozyczenieController">
     <children>
-        <Label layoutX="224.0" layoutY="43.0" prefHeight="42.0" prefWidth="152.0" text="Usuwanie Wypozyczenia">
+        <Label layoutX="211.0" layoutY="43.0" prefHeight="42.0" prefWidth="195.0" text="Usuwanie Wypożyczenia">
             <font>
                 <Font size="15.0" />
             </font>
@@ -17,7 +17,7 @@
             </font>
         </Label>
         <TextField id="wypozyczenieId" fx:id="wypozyczenieId" layoutX="223.0" layoutY="145.0" />
-        <Button fx:id="backButton" layoutX="145.0" layoutY="310.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
-        <Button layoutX="386.0" layoutY="310.0" mnemonicParsing="false" onAction="#usunWypozyczenie" text="Usuń" />
+        <Button fx:id="backButton" layoutX="171.0" layoutY="310.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+        <Button layoutX="393.0" layoutY="310.0" mnemonicParsing="false" onAction="#usunWypozyczenie" text="Usuń" />
     </children>
 </Pane>

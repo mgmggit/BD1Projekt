@@ -16,6 +16,9 @@ public interface ControlledScreen {
     String screen11ID = "Wystawianie Rachunku";
     String screen12ID = "Dodawanie Uzytkownika";
     String screen13ID = "Usuwanie Uzytkownika";
+    String screen14ID = "Dodawanie Egzemplarza";
+    String screen15ID = "Wyswietlanie Egzemplarzy";
+    String screen16ID = "Usuwanie Egzemplarza";
 
 
     void setScreenParent(ScreensController screenPage);

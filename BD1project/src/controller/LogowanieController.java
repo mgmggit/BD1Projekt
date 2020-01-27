@@ -6,15 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import model.Klient;
-import model.ListaUzytkownikow;
-import model.ListaWypozyczen;
 import model.WypozyczalniaHulajnog;
 
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -42,24 +37,12 @@ public class LogowanieController implements Initializable, ControlledScreen {
         String has = haslo.getText();
 
         if (sprText(log, "login") && sprText(has, "haslo")) {
-            potwierdzajacyDialog(log);
             if (WypozyczalniaHulajnog.sprUzytkownik(log, has)) {
                 if (id.equals("zaloguj"))
                     logowanieController.ustawScreen(screen1ID);
             } else {
                 warningAlert("Nie ma takiego użytkownika w bazie!");
             }
-        }
-    }
-
-    //potwierdzenie danych i wyslanie do BD
-    private void potwierdzajacyDialog(String log) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy na pewno chcesz sie zalogować jako " + log + " ?");
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK) {
-            System.out.println("Uzytkownik zalogowany!");
         }
     }
 

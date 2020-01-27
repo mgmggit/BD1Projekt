@@ -37,7 +37,7 @@ public class DodajUzytkownikaController implements Initializable, ControlledScre
         String log = login.getText();
         String has = haslo.getText();
 
-        if (czyNumer(id) && sprText(log, "login") && sprText(has, "haslo")) {
+        if (czyNumer(id, "id") && sprText(log, "login") && sprText(has, "haslo")) {
             potwierdzajacyDialog(Integer.parseInt(id), log, has);
         }
     }
@@ -57,7 +57,12 @@ public class DodajUzytkownikaController implements Initializable, ControlledScre
     }
 
     //Czy string jest numerem
-    public boolean czyNumer(String num) {
+    public boolean czyNumer(String num, String label) {
+        if(num.equals("")) {
+            String alert = "Pole " + label + " nie może być puste!";
+            warningAlert(alert);
+            return false;
+        }
         char[] chars = num.toCharArray();
         for (char c : chars) {
             if (!Character.isDigit(c)) {
@@ -69,7 +74,7 @@ public class DodajUzytkownikaController implements Initializable, ControlledScre
 
     public boolean sprText(String text, String label) {
         if (text.equals("")) {
-            String alert = "Pole " + label + " nie moze być puste!";
+            String alert = "Pole " + label + " nie może być puste!";
             warningAlert(alert);
             return false;
         } else {

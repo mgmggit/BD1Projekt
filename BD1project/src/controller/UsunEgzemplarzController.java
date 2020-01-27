@@ -6,58 +6,59 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import model.WypozyczalniaHulajnog;
-
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class UsunUzytkownikaController implements Initializable, ControlledScreen {
 
-    ScreensController uuController;
+public class UsunEgzemplarzController implements Initializable, ControlledScreen {
+
+    ScreensController ueController;
 
     @FXML
-    private TextField login;
+    private TextField nr;
 
     @FXML
     public void backButton() {
-        goToLog();
+        goToMenu();
     }
 
-    public void goToLog() {
-        loadLogScreen();
+    public void goToMenu() {
+        loadMenuScreen();
     }
 
-    public void loadLogScreen() {
-        uuController.ustawScreen(screen0ID);
+    public void loadMenuScreen() {
+        ueController.ustawScreen(screen1ID);
     }
 
     @FXML
-    public void usunUzytkownika() {
-        String log = login.getText();
-        if (sprText(log, "login") && WypozyczalniaHulajnog.sprLogin(log)) {
-            potwierdzajacyDialog(log);
+    public void usunEgzemplarz() {
+        String nrR = nr.getText();
+        WypozyczalniaHulajnog db = new WypozyczalniaHulajnog();
+        if (sprText(nrR, "nr rejestracyjny") && db.sprHulajnoga(nrR)) {
+            potwierdzajacyDialog(nrR);
         } else {
-            warningAlert("Nie ma użytkownika o takim loginie!");
+            warningAlert("Nie ma hulajnogi o takiej rejestracji!");
         }
     }
 
     //potwierdzenie danych i wyslanie do BD
-    private void potwierdzajacyDialog(String log) {
+    private void potwierdzajacyDialog(String nr) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy na pewno chcesz usunąć użytkownika " + log + " ?");
+        alert.setContentText("Czy na pewno chcesz usunac hulajnoge " + nr + " ?");
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-            System.out.println("Uzytkownik usuniety!");
+            System.out.println("Egzemplarz usuniety!");
             WypozyczalniaHulajnog db = new WypozyczalniaHulajnog();
-            db.usunUzytkownika(log);
-            goToLog();
+            db.usunEgzemplarz(nr);
+            goToMenu();
         }
     }
 
     public boolean sprText(String text, String label) {
         if (text.equals("")) {
-            String alert = "Pole " + label + " nie moze być puste!";
+            String alert = "Pole " + label + " nie może być puste!";
             warningAlert(alert);
             return false;
         } else {
@@ -75,7 +76,7 @@ public class UsunUzytkownikaController implements Initializable, ControlledScree
 
     @Override
     public void setScreenParent(ScreensController screenParent) {
-        uuController = screenParent;
+        ueController = screenParent;
     }
 
     @Override
