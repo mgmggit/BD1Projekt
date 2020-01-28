@@ -195,7 +195,7 @@ public class WypozyczalniaHulajnog {
     //Sprawdzanie czy hulajnoga istnieje w BD
     public boolean sprHulajnogaId(int id) {
         try {Connection conn = connect();
-            prepStmt = conn.prepareStatement("SELECT hulajnoga_id FROM hulajnogi WHERE (hulajnoga_id='" + id + "')");
+            prepStmt = conn.prepareStatement("SELECT hulajnoga_id FROM egzemplarze WHERE (hulajnoga_id='" + id + "')");
             rs = prepStmt.executeQuery();
             while (rs.next()) {
                 rs.close();
@@ -428,6 +428,44 @@ public class WypozyczalniaHulajnog {
             }
         } catch (SQLException e) {
             System.out.println("Problem podczas sprawdzania loginu użytkownika w BD");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean sprLog(String login) {
+        String SQL = "SELECT login FROM logowanie WHERE login = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)){
+            pstmt.setString(1, login);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                pstmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas sprawdzania loginu użytkownika w BD");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean sprId(int id) {
+        String SQL = "SELECT uzytkownik_id FROM logowanie WHERE uzytkownik_id = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)){
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                pstmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas sprawdzania id użytkownika w BD");
             e.printStackTrace();
         }
         return false;

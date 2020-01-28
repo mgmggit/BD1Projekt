@@ -670,13 +670,10 @@
       <Owner>u8grzesiak</Owner>
       <IntrospectionStateNumber>1403448</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|1158550|1158552|1
-sequence|table|1156820|1156822|1
-sequence|table|1156841|1156843|1
-sequence|table|1028181|1028183|1
-sequence|table|1028148|1028150|1
+      <Relations>sequence|table|1028148|1028150|1
 sequence|table|1028159|1028161|1
 sequence|table|1028170|1028172|1
+sequence|table|1028181|1028183|1
 sequence|table|1028197|1028199|1
 sequence|table|1028208|1028210|1
 sequence|table|1028219|1028221|1
@@ -684,6 +681,9 @@ sequence|table|998653|998655|1
 sequence|table|998669|998671|1
 sequence|table|998661|998663|1
 sequence|table|1157419|1157421|1
+sequence|table|1158550|1158552|1
+sequence|table|1156820|1156822|1
+sequence|table|1156841|1156843|1
 </Relations>
     </database>
     <database id="168" parent="1" name="u8wojtasik">

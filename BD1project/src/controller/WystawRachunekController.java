@@ -33,10 +33,12 @@ public class WystawRachunekController implements Initializable, ControlledScreen
     @FXML
     public void wystawRachunek(ActionEvent event) {
         String id = wypozyczenieId.getText();
+        WypozyczalniaHulajnog db = new WypozyczalniaHulajnog();
             if (czyNumer(id, "Id wypozyczenia") && WypozyczalniaHulajnog.sprWypozyczenie(id)) {
                 System.out.println("Rachunek wydany!");
                 int a = WypozyczalniaHulajnog.wystawRachunek(Integer.parseInt(id));
                 koszt.setText(String.valueOf(a));
+                WypozyczalniaHulajnog.usunWypozyczenie(Integer.parseInt(id));
             } else {
                 warningAlert("Nie ma wypozyczenie o takim id!");
             }

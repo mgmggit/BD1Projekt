@@ -38,7 +38,11 @@ public class DodajUzytkownikaController implements Initializable, ControlledScre
         String has = haslo.getText();
 
         if (czyNumer(id, "id") && sprText(log, "login") && sprText(has, "haslo")) {
-            potwierdzajacyDialog(Integer.parseInt(id), log, has);
+            if(WypozyczalniaHulajnog.sprLog(log)){
+                warningAlert("Ten login jest już zajęty !");
+            } else {
+                potwierdzajacyDialog(Integer.parseInt(id), log, has);
+            }
         }
     }
     //potwierdzenie danych i wyslanie do BD
@@ -61,6 +65,10 @@ public class DodajUzytkownikaController implements Initializable, ControlledScre
         if(num.equals("")) {
             String alert = "Pole " + label + " nie może być puste!";
             warningAlert(alert);
+            return false;
+        }
+        if(WypozyczalniaHulajnog.sprId(Integer.parseInt(num))){
+            warningAlert("Użytkownik o takim id już istnieje!");
             return false;
         }
         char[] chars = num.toCharArray();

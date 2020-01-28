@@ -47,7 +47,7 @@ public class DodajEgzemplarzController implements Initializable, ControlledScree
                 warningAlert("Ten nr rejestracyjny jest już zajęty !");
             }
         } else {
-            warningAlert("Nie ma takiego egzemplarza");
+            warningAlert("Nie ma hulajnogi o takim id !");
         }
     }
 
