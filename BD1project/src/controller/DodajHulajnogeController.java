@@ -38,8 +38,12 @@ public class DodajHulajnogeController implements Initializable, ControlledScreen
         String id = hulajnogaId.getText();
         String klasa = hulajnogaKlasa.getText();
         String rokNabycia = hulajnogaRokNabycia.getText();
-        if (sprText(klasa, "klasa") && czyRokOk(rokNabycia, "Rok nabycia") && czyNumer(id, "id")) {
-            if(WypozyczalniaHulajnog.sprHid(Integer.parseInt(id))){
+        if (sprText(klasa, "klasa") && czyNumer(rokNabycia, "rok nabycia") && czyNumer(id, "id")) {
+            if (!sprKlasa(klasa)){
+                warningAlert("Prawidłowe są tylko Elektryczna lub Zwykla! \nZ dużej litery*");
+            } else if(!czyRokOk(rokNabycia)) {
+                warningAlert("Rok nabycia co najmniej 2010!");
+            } else if(WypozyczalniaHulajnog.sprHid(Integer.parseInt(id))) {
                 warningAlert("Już istnieje hulajnoga o danym id!");
             } else {
                 potwierdzajacyDialog(id, klasa, rokNabycia);
@@ -71,6 +75,14 @@ public class DodajHulajnogeController implements Initializable, ControlledScreen
         } else { return true; }
     }
 
+    public boolean sprKlasa(String text) {
+        if ((text.equals("Elektryczna")) || (text.equals("Zwykla"))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     //Czy text jest stringiem
     public boolean czyText(String text) {
         return text.chars().allMatch(Character::isLetter);
@@ -84,14 +96,17 @@ public class DodajHulajnogeController implements Initializable, ControlledScreen
                 String alert = "Pole " + label + " nie moze byc puste i musi skladac sie jedynie z cyfr!";
                 warningAlert(alert);
                 return false;
-            }}
+            }
+        }
+        if (text.equals("")) {
+            warningAlert("Pole " + label + " nie może być puste!");
+            return false;
+        }
         return true;
     }
 
-    public boolean czyRokOk(String text, String label) {
-        if ((Integer.parseInt(text))<2000 || (Integer.parseInt(text))>2020) {
-            String alert = label + " musi być co najmniej 2000!";
-            warningAlert(alert);
+    public boolean czyRokOk(String text) {
+        if ((Integer.parseInt(text))<2010 || (Integer.parseInt(text))>2020) {
             return false;
         } else { return true; }
     }
