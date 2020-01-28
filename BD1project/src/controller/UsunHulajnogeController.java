@@ -34,8 +34,11 @@ public class UsunHulajnogeController implements Initializable, ControlledScreen 
     @FXML
     public void usunHulajnoge() {
         String id = hulajnogaId.getText();
-        if (czyNumer(id, "Id hulajnogi")) {
+        WypozyczalniaHulajnog db = new WypozyczalniaHulajnog();
+        if (czyNumer(id, "Id hulajnogi") && db.sprHulajnogaId(Integer.parseInt(id))) {
             potwierdzajacyDialog(id);
+        } else {
+            warningAlert("Nie ma hulajnogi o takim id!");
         }
     }
 
