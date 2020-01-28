@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DodajKontaktController">
+    <children>
+        <Label layoutX="207.0" layoutY="37.0" text="Dodawanie Kontaktu">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="83.0" layoutY="122.0" text="Nr telefonu: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="343.0" layoutY="122.0" text="Id klienta: ">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <TextField id="klientId" fx:id="klientId" layoutX="343.0" layoutY="153.0" onAction="#dodajKontakt" />
+        <TextField id="tel" fx:id="tel" layoutX="83.0" layoutY="153.0" onAction="#dodajKontakt" />
+        <Button fx:id="dodajKontakt" layoutX="343.0" layoutY="338.0" mnemonicParsing="false" onAction="#dodajKontakt" text="Dodaj" />
+        <Button fx:id="backButton" layoutX="201.0" layoutY="338.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
+    </children>
+</Pane>

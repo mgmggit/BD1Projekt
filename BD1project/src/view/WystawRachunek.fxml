@@ -16,14 +16,14 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="wypozyczenieId" id="wypozyczenieId" layoutX="242.0" layoutY="119.0" />
+      <TextField id="wypozyczenieId" fx:id="wypozyczenieId" layoutX="242.0" layoutY="119.0" />
       <Button layoutX="179.0" layoutY="320.0" mnemonicParsing="false" onAction="#backButton" text="Wróć" />
       <Button layoutX="397.0" layoutY="320.0" mnemonicParsing="false" onAction="#wystawRachunek" text="Oblicz" />
-      <Label layoutX="68.0" layoutY="200.0" text="Koszt wypożyczenia:">
+      <Label layoutX="68.0" layoutY="200.0" text="Do zapłaty:">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="koszt" id="koszt" editable="false" layoutX="242.0" layoutY="197.0" prefHeight="16.0" prefWidth="170.0" />
+      <TextField id="koszt" fx:id="koszt" editable="false" layoutX="242.0" layoutY="197.0" prefHeight="16.0" prefWidth="170.0" />
    </children>
 </Pane>

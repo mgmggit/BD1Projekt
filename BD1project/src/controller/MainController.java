@@ -59,6 +59,15 @@ public class MainController implements  Initializable, ControlledScreen {
             case "usunEgzemplarz":
                 mainController.ustawScreen(screen16ID);
                 break;
+            case "dodajKontakt":
+                mainController.ustawScreen(screen17ID);
+                break;
+            case "wyswietlKontakty":
+                mainController.ustawScreen(screen18ID);
+                break;
+            case "usunKontakt":
+                mainController.ustawScreen(screen19ID);
+                break;
             case "backLog":
                 mainController.ustawScreen(screen0ID);
                 break;

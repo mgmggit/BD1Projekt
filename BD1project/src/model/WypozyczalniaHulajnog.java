@@ -432,5 +432,80 @@ public class WypozyczalniaHulajnog {
         }
         return false;
     }
+
+    public void dodajKontakt(Kontakt kon) {
+        String SQL = "INSERT INTO telefony(nr_tel, klient_id) VALUES (?, ?);";
+        try {Connection conn = connect();
+            prepStmt = conn.prepareStatement(SQL);
+            prepStmt.setString(1, kon.getTel());
+            prepStmt.setInt(2, kon.getKlientId());
+            prepStmt.execute();
+        } catch (SQLException e) {
+            System.out.println("Problem z dodaniem kontaktu do klienta");
+            e.printStackTrace();
+        }
+    }
+
+    public static void usunKontakt(String nr) {
+        String SQL = "DELETE FROM telefony WHERE nr_tel = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)) {
+            pstmt.setString(1, nr);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Problem z usunieciem kontaktu do klienta z BD");
+            e.printStackTrace();
+        }
+    }
+
+    public static ObservableList<Kontakt> wyswietlKontakty() throws SQLException {
+        String SQL = "SELECT * FROM telefony;";
+        try {Connection conn = connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(SQL);
+            ObservableList<Kontakt> konList = getKontaktObjects(rs);
+            return konList;
+        } catch (SQLException e) {
+            System.out.println("Problem z dostaniem danych klientow z BD" + e);
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    private static ObservableList<Kontakt> getKontaktObjects(ResultSet rs) throws SQLException {
+        try {
+            ObservableList<Kontakt> konList = FXCollections.observableArrayList();
+            while (rs.next()){
+                Kontakt kon = new Kontakt();
+                kon.setTel(rs.getString("nr_tel"));
+                kon.setKlientId(rs.getInt("klient_id"));
+                konList.add(kon);
+            }
+            return konList;
+        } catch (SQLException e) {
+            System.out.println("Error"+e);
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    public boolean sprTel(String nr) {
+        String SQL = "SELECT nr_tel FROM telefony WHERE nr_tel = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)){
+            pstmt.setString(1, nr);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                pstmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas sprawdzania danego telefonu w BD");
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 

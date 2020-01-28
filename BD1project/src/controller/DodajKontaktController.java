@@ -1,22 +1,24 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import model.Kontakt;
 import model.WypozyczalniaHulajnog;
 
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-public class UsunKlientaController implements Initializable, ControlledScreen {
+public class DodajKontaktController implements Initializable, ControlledScreen {
 
-    ScreensController ukController;
+    ScreensController dtController;
 
     @FXML
-    private TextField klientId;
+    private TextField klientId, tel;
 
     @FXML
     public void backButton() {
@@ -28,35 +30,37 @@ public class UsunKlientaController implements Initializable, ControlledScreen {
     }
 
     public void loadMenuScreen() {
-        ukController.ustawScreen(screen1ID);
+        dtController.ustawScreen(screen1ID);
     }
 
     @FXML
-    public void usunKlienta() {
+    public void dodajKontakt(ActionEvent event) {
         String id = klientId.getText();
+        String nrT = tel.getText();
         WypozyczalniaHulajnog db = new WypozyczalniaHulajnog();
-        if (czyNumer(id, "klientId") &&  db.sprKlient(Integer.parseInt(id))) {
-            potwierdzajacyDialog(id);
+        if (czyNumer(nrT, "nr telefonu") && czyNumer(id, "id") && db.sprKlient(Integer.parseInt(id))) {
+                potwierdzajacyDialog(id, nrT);
         } else {
-            warningAlert("Nie ma klienta o takim id!");
+            warningAlert("Nie ma takiego klienta");
         }
     }
 
-    //potwierdzenie danych i wyslanie do BD
-    private void potwierdzajacyDialog(String id) {
+
+    private void potwierdzajacyDialog(String id, String nr) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy na pewno chcesz usunac klienta o id = " + id + " ?");
+        alert.setContentText("Czy te dane sa prawidlowe?\nId: " + id + "\nTelefon: " + nr);
         Optional<ButtonType> result = alert.showAndWait();
         if (result.get() == ButtonType.OK) {
-            System.out.println("Klient usuniety!");
+            System.out.println("Kontakt dodany!");
             WypozyczalniaHulajnog db = new WypozyczalniaHulajnog();
-            db.usunKlienta(Integer.parseInt(id));
+            Kontakt kontakt = new Kontakt(Integer.parseInt(id), nr);
+            db.dodajKontakt(kontakt);
             goToMenu();
         }
     }
 
-    //Czy string jest numerem
+
     public boolean czyNumer(String text, String label) {
         char[] chars = text.toCharArray();
         for (char c : chars) {
@@ -64,8 +68,7 @@ public class UsunKlientaController implements Initializable, ControlledScreen {
                 String alert = "Pole " + label + " nie moze byc puste i musi skladac sie jedynie z cyfr!";
                 warningAlert(alert);
                 return false;
-            }
-        }
+            }}
         return true;
     }
 
@@ -79,7 +82,7 @@ public class UsunKlientaController implements Initializable, ControlledScreen {
 
     @Override
     public void setScreenParent(ScreensController screenParent) {
-        ukController = screenParent;
+        dtController = screenParent;
     }
 
     @Override
@@ -87,4 +90,3 @@ public class UsunKlientaController implements Initializable, ControlledScreen {
 
     }
 }
-

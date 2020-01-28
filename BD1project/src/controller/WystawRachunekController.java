@@ -3,12 +3,10 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import model.WypozyczalniaHulajnog;
 import javafx.event.ActionEvent;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -36,24 +34,14 @@ public class WystawRachunekController implements Initializable, ControlledScreen
     public void wystawRachunek(ActionEvent event) {
         String id = wypozyczenieId.getText();
             if (czyNumer(id, "Id wypozyczenia") && WypozyczalniaHulajnog.sprWypozyczenie(id)) {
-                potwierdzajacyDialog(Integer.parseInt(id));
+                System.out.println("Rachunek wydany!");
+                int a = WypozyczalniaHulajnog.wystawRachunek(Integer.parseInt(id));
+                koszt.setText(String.valueOf(a));
             } else {
                 warningAlert("Nie ma wypozyczenie o takim id!");
             }
     }
 
-
-    private void potwierdzajacyDialog(int id) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Potwierdzenie");
-        alert.setContentText("Czy na pewno chcesz sfinalizować wypozyczenie?");
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK) {
-            System.out.println("Rachunek wydany!");
-            int a = WypozyczalniaHulajnog.wystawRachunek(id);
-            koszt.setText(String.valueOf(a));
-        }
-    }
 
     //Czy string jest numerem
     public boolean czyNumer(String text, String label) {
