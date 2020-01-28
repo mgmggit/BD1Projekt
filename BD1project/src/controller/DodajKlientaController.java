@@ -41,8 +41,14 @@ public class DodajKlientaController implements Initializable, ControlledScreen {
         String nazwisko = nazwiskoKlienta.getText();
         String pesel = peselKlienta.getText();
 
+        WypozyczalniaHulajnog db = new WypozyczalniaHulajnog();
+
         if (sprText(imie, "imie") && sprText(nazwisko, "nazwisko") && sprPesel(pesel)) {
-            potwierdzajacyDialog(Integer.parseInt(id), imie, nazwisko, pesel);
+            if(db.sprKlient(Integer.parseInt(id))){
+                warningAlert("Klient o takim id już istnieje!");
+            } else {
+                potwierdzajacyDialog(Integer.parseInt(id), imie, nazwisko, pesel);
+            }
         }
     }
 

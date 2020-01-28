@@ -46,7 +46,11 @@ public class DodajWypozyczenieController implements Initializable, ControlledScr
 
         if (db.sprKlient(Integer.parseInt(idKlienta))) {
             if (db.sprHulajnoga(nrRejestr)) {
-                potwierdzajacyDialog(Integer.parseInt(idWypozyczenia), Integer.parseInt(idKlienta), nrRejestr, Integer.parseInt(godzinaOd), Integer.parseInt(godzinaDo), Integer.parseInt(nrUslugi));
+                if(db.sprR(nrRejestr)){
+                    warningAlert("Hulajnoga o tej rejestracji jest już wypożyczona!");
+                } else {
+                    potwierdzajacyDialog(Integer.parseInt(idWypozyczenia), Integer.parseInt(idKlienta), nrRejestr, Integer.parseInt(godzinaOd), Integer.parseInt(godzinaDo), Integer.parseInt(nrUslugi));
+                }
             } else {
                 warningAlert("Nie ma pojazdu o takim numerze rejestracyjnym!");
             }

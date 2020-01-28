@@ -23,9 +23,9 @@
         </Label>
         <TextField id="login" fx:id="login" layoutX="113.0" layoutY="138.0" onAction="#zaloguj" />
         <TextField id="haslo" fx:id="haslo" layoutX="113.0" layoutY="226.0" onAction="#zaloguj" />
-        <Button fx:id="zaloguj" layoutX="165.0" layoutY="304.0" mnemonicParsing="false" onAction="#zaloguj" text="Zaloguj" />
+        <Button fx:id="zaloguj" layoutX="154.0" layoutY="304.0" mnemonicParsing="false" onAction="#zaloguj" prefHeight="26.0" prefWidth="89.0" text="Zaloguj" />
         <Button fx:id="exitButton" layoutX="521.0" layoutY="349.0" mnemonicParsing="false" onAction="#exit" text="Zamknij" />
-      <Button fx:id="dodajUzytkownika" layoutX="444.0" layoutY="138.0" mnemonicParsing="false" onAction="#dodajUzytkownika" text="Zarejestruj się" />
+      <Button fx:id="dodajUzytkownika" layoutX="455.0" layoutY="138.0" mnemonicParsing="false" onAction="#dodajUzytkownika" text="Zarejestruj" />
       <Button fx:id="usunUzytkownika" layoutX="454.0" layoutY="226.0" mnemonicParsing="false" onAction="#usunUzytkownika" text="Usuń konto" />
     </children>
 </Pane>

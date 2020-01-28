@@ -210,6 +210,23 @@ public class WypozyczalniaHulajnog {
         return false;
     }
 
+    public static boolean sprHid(int id) {
+        try {Connection conn = connect();
+            PreparedStatement prepStmt = conn.prepareStatement("SELECT hulajnoga_id FROM hulajnogi WHERE (hulajnoga_id='" + id + "')");
+            ResultSet rs = prepStmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                prepStmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas szukania hulajnogi o danym id w BD!");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     public void dodajEgzemplarz(Egzemplarze egz) {
         String SQL = "INSERT INTO egzemplarze(nr_rejestr, hulajnoga_id) VALUES (?, ?);";
         try {Connection conn = connect();
@@ -545,5 +562,25 @@ public class WypozyczalniaHulajnog {
         }
         return false;
     }
+
+    public boolean sprR(String nr) {
+        String SQL = "SELECT nr_rejestr FROM wypozyczenia WHERE nr_rejestr = ?";
+        try (Connection conn = connect();
+             PreparedStatement pstmt = conn.prepareStatement(SQL)){
+            pstmt.setString(1, nr);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                rs.close();
+                pstmt.close();
+                conn.close();
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Problem podczas sprawdzania rejestracji wypożyczonej hulajnogi w BD");
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
 

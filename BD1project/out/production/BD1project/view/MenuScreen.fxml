@@ -34,7 +34,7 @@
         <Button fx:id="wyswietlKontakty" layoutX="254.0" layoutY="284.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Wyświetl" />
         <Button fx:id="usunKontakt" layoutX="254.0" layoutY="323.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Usuń" />
         <Button fx:id="wystawRachunek" layoutX="463.0" layoutY="245.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="115.0" text="Wystaw" />
-        <Button fx:id="backLog" layoutX="447.0" layoutY="349.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="74.0" text="Wróć" />
+        <Button fx:id="backLog" layoutX="447.0" layoutY="349.0" mnemonicParsing="false" onAction="#dodaj" prefHeight="26.0" prefWidth="74.0" text="Wyloguj" />
         <Button fx:id="exitButton" layoutX="539.0" layoutY="349.0" mnemonicParsing="false" onAction="#exit" text="Zamknij" />
       <Label layoutX="484.0" layoutY="216.0" text="Rachunek">
          <font>

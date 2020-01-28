@@ -38,8 +38,12 @@ public class DodajHulajnogeController implements Initializable, ControlledScreen
         String id = hulajnogaId.getText();
         String klasa = hulajnogaKlasa.getText();
         String rokNabycia = hulajnogaRokNabycia.getText();
-        if (sprText(klasa, "klasa") && czyNumer(rokNabycia, "rok nabycia") && czyNumer(id, "id")) {
-            potwierdzajacyDialog(id, klasa, rokNabycia);
+        if (sprText(klasa, "klasa") && czyRokOk(rokNabycia, "Rok nabycia") && czyNumer(id, "id")) {
+            if(WypozyczalniaHulajnog.sprHid(Integer.parseInt(id))){
+                warningAlert("Już istnieje hulajnoga o danym id!");
+            } else {
+                potwierdzajacyDialog(id, klasa, rokNabycia);
+            }
         }
     }
 
@@ -82,6 +86,14 @@ public class DodajHulajnogeController implements Initializable, ControlledScreen
                 return false;
             }}
         return true;
+    }
+
+    public boolean czyRokOk(String text, String label) {
+        if ((Integer.parseInt(text))<2000 || (Integer.parseInt(text))>2020) {
+            String alert = label + " musi być co najmniej 2000!";
+            warningAlert(alert);
+            return false;
+        } else { return true; }
     }
 
     public void warningAlert(String text) {
